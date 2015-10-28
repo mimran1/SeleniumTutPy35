@@ -54,7 +54,7 @@ class NavigateToTranscript(Base):
         passwrd.send_keys(PASSWORD)
         clickLogin = self.driver.find_element_by_xpath("//input[@type='submit']")
         clickLogin.click()
-        #End login in
+        #End login ind
         self.driver.implicitly_wait(10)
     
     def clickStudent(self):
