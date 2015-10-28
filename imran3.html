@@ -1,0 +1,384 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML lang="en">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Pragma" name="Cache-Control" content="no-cache">
+<meta http-equiv="Cache-Control" name="Cache-Control" content="no-cache">
+<LINK REL="stylesheet" HREF="/css/web_defaultapp.css" TYPE="text/css">
+<LINK REL="stylesheet" HREF="/css/web_defaultprint.css" TYPE="text/css" media="print">
+<title>View Student Schedule</title>
+<meta http-equiv="Content-Script-Type" name="Default_Script_Language" content="text/javascript">
+<SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript">
+<!-- Hide JavaScript from older browsers 
+window.onunload = function() {submitcount=0;}
+var submitcount=0;
+function checkSubmit() {
+if (submitcount == 0)
+   {
+   submitcount++;
+   return true;
+   }
+else
+   {
+alert("Your changes have already been submitted.");
+   return false;
+   }
+}
+//  End script hiding -->
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript">
+<!-- Hide JavaScript from older browsers 
+//  Function to open a window
+function windowOpen(window_url) {
+   helpWin = window.open(window_url,'','toolbar=yes,status=no,scrollbars=yes,menubar=yes,resizable=yes,directories=no,location=no,width=350,height=400');
+   if (document.images) { 
+       if (helpWin) helpWin.focus()
+   }
+}
+//  End script hiding -->
+</SCRIPT>
+</head>
+<body>
+<div class="headerwrapperdiv">
+<div class="pageheaderdiv1">
+<a href="#main_content" onMouseover="window.status='Go to Main Content'; return true" onMouseout="window.status=''; return true" OnFocus="window.status='Go to Main Content'; return true" onBlur="window.status=''; return true" class="skiplinks">Go to Main Content</a>
+<h1>BU  - BANPROD</h1></DIV><div class="headerlinksdiv">
+<SPAN class="pageheaderlinks2">
+<map name="Module_Navigation_Links_H" title="Module Navigation Links">
+<p>
+<a href="#skip_Module_Navigation_Links_H" onMouseover="window.status='Skip Module Navigation Links'; return true" onMouseout="window.status=''; return true" onFocus="window.status='Skip Module Navigation Links'; return true" onBlur="window.status=''; return true"  class="skiplinks">Skip Module Navigation Links</a>
+<table  CLASS="plaintable" SUMMARY="This is main table for displaying Tab Items."
+                          WIDTH="100%" cellSpacing=0 cellPadding=0 border=0>
+<tr>
+<TD CLASS="pldefault">
+<table  CLASS="plaintable" SUMMARY="This table displays Tab Items."
+                 cellSpacing=0 cellPadding=0 border=0>
+<tr>
+<td class="taboff" height=22>
+<a href="/banner/twbkwbis.P_GenMenu?name=bmenu.P_MainMnu" onMouseover="window.status='Return to Main Menu'; return true" onMouseout="window.status=''; return true" onFocus="window.status='Return to Main Menu'; return true" onBlur="window.status=''; return true" >Home</a>
+</TD>
+<TD class="bgtaboff" height=22 vAlign="top" align="right">
+<img src="/wtlgifs/web_tab_corner_right.gif" alt="Tab Corner Right" CLASS="headerImg" TITLE="Tab Corner Right"  NAME="web_tab_corner_right" HSPACE=0 VSPACE=0 BORDER=0 HEIGHT=20 WIDTH=8 />
+</TD>
+<td class="taboff" height=22>
+<a href="/banner/twbkwbis.P_GenMenu?name=bmenu.P_GenMnu" onMouseover="window.status='Personal Information'; return true" onMouseout="window.status=''; return true" onFocus="window.status='Personal Information'; return true" onBlur="window.status=''; return true" >My Information</a>
+</TD>
+<TD class="bgtaboff" height=22 vAlign="top" align="right">
+<img src="/wtlgifs/web_tab_corner_right.gif" alt="Tab Corner Right" CLASS="headerImg" TITLE="Tab Corner Right"  NAME="web_tab_corner_right" HSPACE=0 VSPACE=0 BORDER=0 HEIGHT=20 WIDTH=8 />
+</TD>
+<td class="taboff" height=22>
+<a href="/banner/twbkwbis.P_GenMenu?name=bmenu.P_FacStuMnu">Records Access</a>
+</TD>
+<TD class="bgtaboff" height=22 vAlign="top" align="right">
+<img src="/wtlgifs/web_tab_corner_right.gif" alt="Tab Corner Right" CLASS="headerImg" TITLE="Tab Corner Right"  NAME="web_tab_corner_right" HSPACE=0 VSPACE=0 BORDER=0 HEIGHT=20 WIDTH=8 />
+</TD>
+<td class="tabon"  height=22>
+<a href="/banner/twbkwbis.P_GenMenu?name=bmenu.P_FacMainMnu" onMouseover="window.status='Faculty Services'; return true" onMouseout="window.status=''; return true" onFocus="window.status='Faculty Services'; return true" onBlur="window.status=''; return true" >Faculty & Staff</a>
+</TD>
+<TD class="bgtabon"  height=22 vAlign="top" align="right">
+<img src="/wtlgifs/web_tab_corner_right.gif" alt="Tab Corner Right" CLASS="headerImg" TITLE="Tab Corner Right"  NAME="web_tab_corner_right" HSPACE=0 VSPACE=0 BORDER=0 HEIGHT=20 WIDTH=8 />
+</TD>
+<td class="taboff" height=22>
+<a href="/banner/twbkwbis.P_GenMenu?name=bu_help">Help</a>
+</TD>
+<TD class="bgtaboff" height=22 vAlign="top" align="right">
+<img src="/wtlgifs/web_tab_corner_right.gif" alt="Tab Corner Right" CLASS="headerImg" TITLE="Tab Corner Right"  NAME="web_tab_corner_right" HSPACE=0 VSPACE=0 BORDER=0 HEIGHT=20 WIDTH=8 />
+</TD>
+</tr>
+</table>
+</TD>
+</tr>
+<tr>
+<TD class="bgtabon" width="100%" colSpan=2><img src="/wtlgifs/web_transparent.gif" alt="Transparent Image" CLASS="headerImg" TITLE="Transparent Image"  NAME="web_transparent" HSPACE=0 VSPACE=0 BORDER=0 HEIGHT=3 WIDTH=10 /></TD></tr></table>
+</map>
+</SPAN>
+<a name="skip_Module_Navigation_Links_H"></a>
+</DIV>
+<table  CLASS="plaintable" SUMMARY="This table displays Menu Items and Banner Search textbox."
+         WIDTH="100%">
+<tr>
+<TD CLASS="pldefault">
+<div class="headerlinksdiv2">
+<form action="/banner/twbksrch.P_ShowResults" method="post">
+Search
+<SPAN class="fieldlabeltextinvisible"><LABEL for=keyword_in_id><SPAN class="fieldlabeltext">Search</SPAN></LABEL></SPAN>
+<input type="text" name="KEYWRD_IN" size="20" maxlength="65" ID="keyword_in_id" />
+<input type="submit" value="Go" />
+</form>
+</div>
+</TD>
+<TD CLASS="pldefault"><p class="rightaligntext"></p>
+<SPAN class="pageheaderlinks">
+<a href="/banner/twbkwbis.P_GenMenu?name=bmenu.P_FacStuMnu"  class="submenulinktext2" id="ssbbackurl">RETURN TO MENU</a>
+|
+<a href="/banner/twbksite.P_DispSiteMap?menu_name_in=bmenu.P_MainMnu&amp;depth_in=2&amp;columns_in=3" accesskey="2" class="submenulinktext2">SITE MAP</a>
+|
+<a href="/banner/twbkfrmt.P_DispHelp?pagename_in=bwlkfstu.P_FacStuSchd" accesskey="H" onClick="popup = window.open('/banner/twbkfrmt.P_DispHelp?pagename_in=bwlkfstu.P_FacStuSchd', 'PopupPage','height=500,width=450,scrollbars=yes,resizable=yes'); return false" target="_blank" onMouseOver="window.status='';  return true" onMouseOut="window.status=''; return true"onFocus="window.status='';  return true" onBlur="window.status=''; return true"  class="submenulinktext2">HELP</a>
+|
+<a href="twbkwbis.P_Logout" accesskey="3" class="submenulinktext2">EXIT</a>
+</span>
+</TD>
+</tr>
+</table>
+</DIV>
+<div class="pagetitlediv">
+<table  CLASS="plaintable" SUMMARY="This table displays title and static header displays."
+   WIDTH="100%">
+<tr>
+<TD CLASS="pldefault">
+<h2>View Student Schedule</h2>
+</TD>
+<TD CLASS="pldefault">
+&nbsp;
+</TD>
+<TD CLASS="pldefault"><p class="rightaligntext"></p>
+<div class="staticheaders">
+B00070926 Leslie C. Lander<br>
+Spring 2015<br>
+Oct 23, 2015 04:42 pm<br>
+</div>
+</TD>
+</tr>
+<tr>
+<TD class="bg3" width="100%" colSpan=3><img src="/wtlgifs/web_transparent.gif" alt="Transparent Image" CLASS="headerImg" TITLE="Transparent Image"  NAME="web_transparent" HSPACE=0 VSPACE=0 BORDER=0 HEIGHT=3 WIDTH=10 /></TD>
+</tr>
+</table>
+<a name="main_content"></a>
+</DIV>
+<div class="pagebodydiv">
+<!--  ** END OF twbkwbis.P_OpenDoc **  -->
+<table  CLASS="plaintable" summary="This layout table holds message information">
+<tr>
+<TD CLASS="pldefault">
+&nbsp;
+</TD>
+<TD CLASS="pldefault">
+Information for <a href="/banner/bwlkosad.P_FacSelectAtypView" name="Student Address" onMouseOver="window.status='Student Address';  return true" onFocus="window.status='Student Address';  return true" onMouseOut="window.status='';  return true"onBlur="window.status='';  return true">Mohammad A. Imran</a>
+<br />
+</TD>
+</tr>
+</table>
+
+
+
+<h3><div class="infotextdiv"><table  CLASS="infotexttable" SUMMARY="This layout table contains information that may be helpful in understanding the content and functionality of this page.  It could be a brief set of instructions, a description of error messages, or other special information."><tr><td CLASS="indefault"><SPAN class="infotext"> The current real-time schedule is below.</SPAN></td></tr></table><p></DIV></h3>
+
+Total Credit Hours: 9.000
+<br />
+<br />
+<table  CLASS="datadisplaytable" SUMMARY="This layout table is used to present the schedule course detail"><caption class="captiontext">Design Patterns - CS 542 - 01</caption>
+<tr>
+<th colspan="2" CLASS="ddlabel" scope="row" >Associated Term:</th>
+<td CLASS="dddefault">Spring 2015</td>
+</tr>
+<tr>
+<th colspan="2" CLASS="ddlabel" scope="row" ><ACRONYM title = "Course Reference Number">CRN</ACRONYM>:</th>
+<td CLASS="dddefault">19773</td>
+</tr>
+<tr>
+<th colspan="2" CLASS="ddlabel" scope="row" >Status:</th>
+<td CLASS="dddefault">**Registered** on Nov 18, 2014</td>
+</tr>
+<tr>
+<th colspan="2" CLASS="ddlabel" scope="row" >Assigned Instructor:</th>
+<TD CLASS="dddefault">
+Madhusudhan Govindaraju
+</TD>
+</tr>
+<tr>
+<th colspan="2" CLASS="ddlabel" scope="row" >Grade Mode:</th>
+<td CLASS="dddefault">Watson Standard Letter</td>
+</tr>
+<tr>
+<th colspan="2" CLASS="ddlabel" scope="row" >Credits:</th>
+<td CLASS="dddefault">    3.000</td>
+</tr>
+<tr>
+<th colspan="2" CLASS="ddlabel" scope="row" >Level:</th>
+<td CLASS="dddefault">Graduate</td>
+</tr>
+<tr>
+<th colspan="2" CLASS="ddlabel" scope="row" >Campus:</th>
+<td CLASS="dddefault">Main</td>
+</tr>
+</table>
+<table  CLASS="datadisplaytable" SUMMARY="This table lists the scheduled meeting times and assigned instructors for this class.."><caption class="captiontext">Scheduled Meeting Times</caption>
+<tr>
+<th CLASS="ddheader" scope="col" >Type</th>
+<th CLASS="ddheader" scope="col" >Time</th>
+<th CLASS="ddheader" scope="col" >Days</th>
+<th CLASS="ddheader" scope="col" >Where</th>
+<th CLASS="ddheader" scope="col" >Date Range</th>
+<th CLASS="ddheader" scope="col" >Schedule Type</th>
+<th CLASS="ddheader" scope="col" >Instructors</th>
+</tr>
+<tr>
+<td CLASS="dddefault">Class</td>
+<td CLASS="dddefault">2:20 pm - 3:20 pm</td>
+<td CLASS="dddefault">MWF</td>
+<td CLASS="dddefault">University Union 215</td>
+<td CLASS="dddefault">Jan 26, 2015 - May 08, 2015</td>
+<td CLASS="dddefault">Discussion</td>
+<td CLASS="dddefault">Madhusudhan   Govindaraju (<ABBR title= "Primary">P</ABBR>)</td>
+</tr>
+</table>
+<br />
+<table  CLASS="datadisplaytable" SUMMARY="This layout table is used to present the schedule course detail"><caption class="captiontext">Operating Systms - CS 550 - 02</caption>
+<tr>
+<th colspan="2" CLASS="ddlabel" scope="row" >Associated Term:</th>
+<td CLASS="dddefault">Spring 2015</td>
+</tr>
+<tr>
+<th colspan="2" CLASS="ddlabel" scope="row" ><ACRONYM title = "Course Reference Number">CRN</ACRONYM>:</th>
+<td CLASS="dddefault">25671</td>
+</tr>
+<tr>
+<th colspan="2" CLASS="ddlabel" scope="row" >Status:</th>
+<td CLASS="dddefault">**Registered** on Nov 18, 2014</td>
+</tr>
+<tr>
+<th colspan="2" CLASS="ddlabel" scope="row" >Assigned Instructor:</th>
+<TD CLASS="dddefault">
+Kartik Gopalan
+</TD>
+</tr>
+<tr>
+<th colspan="2" CLASS="ddlabel" scope="row" >Grade Mode:</th>
+<td CLASS="dddefault">Watson Standard Letter</td>
+</tr>
+<tr>
+<th colspan="2" CLASS="ddlabel" scope="row" >Credits:</th>
+<td CLASS="dddefault">    3.000</td>
+</tr>
+<tr>
+<th colspan="2" CLASS="ddlabel" scope="row" >Level:</th>
+<td CLASS="dddefault">Graduate</td>
+</tr>
+<tr>
+<th colspan="2" CLASS="ddlabel" scope="row" >Campus:</th>
+<td CLASS="dddefault">Main</td>
+</tr>
+</table>
+<table  CLASS="datadisplaytable" SUMMARY="This table lists the scheduled meeting times and assigned instructors for this class.."><caption class="captiontext">Scheduled Meeting Times</caption>
+<tr>
+<th CLASS="ddheader" scope="col" >Type</th>
+<th CLASS="ddheader" scope="col" >Time</th>
+<th CLASS="ddheader" scope="col" >Days</th>
+<th CLASS="ddheader" scope="col" >Where</th>
+<th CLASS="ddheader" scope="col" >Date Range</th>
+<th CLASS="ddheader" scope="col" >Schedule Type</th>
+<th CLASS="ddheader" scope="col" >Instructors</th>
+</tr>
+<tr>
+<td CLASS="dddefault">Class</td>
+<td CLASS="dddefault">8:30 am - 9:55 am</td>
+<td CLASS="dddefault">TR</td>
+<td CLASS="dddefault">Lecture Hall 005</td>
+<td CLASS="dddefault">Jan 26, 2015 - May 08, 2015</td>
+<td CLASS="dddefault">Discussion</td>
+<td CLASS="dddefault">Kartik   Gopalan (<ABBR title= "Primary">P</ABBR>)</td>
+</tr>
+</table>
+<br />
+<table  CLASS="datadisplaytable" SUMMARY="This layout table is used to present the schedule course detail"><caption class="captiontext">Termination Project - CS 595 - 10</caption>
+<tr>
+<th colspan="2" CLASS="ddlabel" scope="row" >Associated Term:</th>
+<td CLASS="dddefault">Spring 2015</td>
+</tr>
+<tr>
+<th colspan="2" CLASS="ddlabel" scope="row" ><ACRONYM title = "Course Reference Number">CRN</ACRONYM>:</th>
+<td CLASS="dddefault">14145</td>
+</tr>
+<tr>
+<th colspan="2" CLASS="ddlabel" scope="row" >Status:</th>
+<td CLASS="dddefault">**Registered** on Feb 03, 2015</td>
+</tr>
+<tr>
+<th colspan="2" CLASS="ddlabel" scope="row" >Assigned Instructor:</th>
+<TD CLASS="dddefault">
+Leslie C. Lander
+</TD>
+</tr>
+<tr>
+<th colspan="2" CLASS="ddlabel" scope="row" >Grade Mode:</th>
+<td CLASS="dddefault">Graduate All Inclusive</td>
+</tr>
+<tr>
+<th colspan="2" CLASS="ddlabel" scope="row" >Credits:</th>
+<td CLASS="dddefault">    3.000</td>
+</tr>
+<tr>
+<th colspan="2" CLASS="ddlabel" scope="row" >Level:</th>
+<td CLASS="dddefault">Graduate</td>
+</tr>
+<tr>
+<th colspan="2" CLASS="ddlabel" scope="row" >Campus:</th>
+<td CLASS="dddefault">Main</td>
+</tr>
+</table>
+<table  CLASS="datadisplaytable" SUMMARY="This table lists the scheduled meeting times and assigned instructors for this class.."><caption class="captiontext">Scheduled Meeting Times</caption>
+<tr>
+<th CLASS="ddheader" scope="col" >Type</th>
+<th CLASS="ddheader" scope="col" >Time</th>
+<th CLASS="ddheader" scope="col" >Days</th>
+<th CLASS="ddheader" scope="col" >Where</th>
+<th CLASS="ddheader" scope="col" >Date Range</th>
+<th CLASS="ddheader" scope="col" >Schedule Type</th>
+<th CLASS="ddheader" scope="col" >Instructors</th>
+</tr>
+<tr>
+<td CLASS="dddefault">Class</td>
+<td CLASS="dddefault"><ABBR title = "To Be Announced">TBA</ABBR></td>
+<td CLASS="dddefault">&nbsp;</td>
+<td CLASS="dddefault"><ABBR title = "To Be Announced">TBA</ABBR></td>
+<td CLASS="dddefault">Jan 26, 2015 - May 08, 2015</td>
+<td CLASS="dddefault">Independent Study</td>
+<td CLASS="dddefault">Leslie C  Lander (<ABBR title= "Primary">P</ABBR>)</td>
+</tr>
+</table>
+<br />
+<a href="javascript:history.go(-1)" onMouseOver="window.status='Return to Previous';  return true" onFocus="window.status='Return to Previous';  return true" onMouseOut="window.status='';  return true"onBlur="window.status='';  return true">Return to Previous</a>
+<br />
+
+<!--  ** START OF twbkwbis.P_CloseDoc **  -->
+<table  CLASS="plaintable" SUMMARY="This is table displays line separator at end of the page."
+                                             WIDTH="100%" cellSpacing=0 cellPadding=0 border=0><tr><TD class="bgtabon" width="100%" colSpan=2><img src="/wtlgifs/web_transparent.gif" alt="Transparent Image" CLASS="headerImg" TITLE="Transparent Image"  NAME="web_transparent" HSPACE=0 VSPACE=0 BORDER=0 HEIGHT=3 WIDTH=10 /></TD></tr></table>
+<a href="#top" onMouseover="window.status='Skip to top of page'; return true" onMouseout="window.status=''; return true" OnFocus="window.status='Skip to top of page'; return true" onBlur="window.status=''; return true" class="skiplinks">Skip to top of page</a>
+</DIV>
+<div class="footerbeforediv">
+
+</DIV>
+<div class="footerlinksdiv">
+<SPAN class="pagefooterlinks">
+<map name="View_Student_Schedule_Links_F" title="View Student Schedule Links">
+<p>
+<a href="#skip_View_Student_Schedule_Links_F" onMouseover="window.status='Skip View Student Schedule Links'; return true" onMouseout="window.status=''; return true" onFocus="window.status='Skip View Student Schedule Links'; return true" onBlur="window.status=''; return true"  class="skiplinks">Skip View Student Schedule Links</a>
+<P>[ <a href="/banner/bwlkgstu.P_FacStuInfo" onMouseover="window.status='Student Information'; return true" onMouseout="window.status=''; return true" onFocus="window.status='Student Information'; return true" onBlur="window.status=''; return true" >Student Information</a>
+ ]
+</map>
+</SPAN>
+<a name="skip_View_Student_Schedule_Links_F"></a>
+</DIV>
+<div class="footerafterdiv">
+
+</DIV>
+<div class="globalafterdiv">
+
+</DIV>
+<div class="globalfooterdiv">
+
+</DIV>
+<div class="pagefooterdiv">
+<SPAN class="releasetext">Release: 8.4</SPAN>
+</DIV>
+<div class="poweredbydiv">
+</DIV>
+<DIV class="div1"></DIV>
+<DIV class="div2"></DIV>
+<DIV class="div3"></DIV>
+<DIV class="div4"></DIV>
+<DIV class="div5"></DIV>
+<DIV class="div6"></DIV>
+<div class="banner_copyright"> <br><h5>© 2015 Ellucian Company L.P. and its affiliates.<br></h5></div>
+</body>
+</html>

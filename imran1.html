@@ -1,0 +1,332 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML lang="en">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Pragma" name="Cache-Control" content="no-cache">
+<meta http-equiv="Cache-Control" name="Cache-Control" content="no-cache">
+<LINK REL="stylesheet" HREF="/css/web_defaultmenu.css" TYPE="text/css">
+<LINK REL="stylesheet" HREF="/css/web_defaultprint.css" TYPE="text/css" media="print">
+<title>Faculty & Advisor Records Access</title>
+<meta http-equiv="Content-Script-Type" name="Default_Script_Language" content="text/javascript">
+<SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript">
+<!-- Hide JavaScript from older browsers 
+window.onunload = function() {submitcount=0;}
+var submitcount=0;
+function checkSubmit() {
+if (submitcount == 0)
+   {
+   submitcount++;
+   return true;
+   }
+else
+   {
+alert("Your changes have already been submitted.");
+   return false;
+   }
+}
+//  End script hiding -->
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript">
+<!-- Hide JavaScript from older browsers 
+//  Function to open a window
+function windowOpen(window_url) {
+   helpWin = window.open(window_url,'','toolbar=yes,status=no,scrollbars=yes,menubar=yes,resizable=yes,directories=no,location=no,width=350,height=400');
+   if (document.images) { 
+       if (helpWin) helpWin.focus()
+   }
+}
+//  End script hiding -->
+</SCRIPT>
+</head>
+<body>
+<div class="headerwrapperdiv">
+<div class="pageheaderdiv1">
+<a href="#main_content" onMouseover="window.status='Go to Main Content'; return true" onMouseout="window.status=''; return true" OnFocus="window.status='Go to Main Content'; return true" onBlur="window.status=''; return true" class="skiplinks">Go to Main Content</a>
+<h1>BU  - BANPROD</h1></DIV><div class="headerlinksdiv">
+<SPAN class="pageheaderlinks2">
+<map name="Module_Navigation_Links_H" title="Module Navigation Links">
+<p>
+<a href="#skip_Module_Navigation_Links_H" onMouseover="window.status='Skip Module Navigation Links'; return true" onMouseout="window.status=''; return true" onFocus="window.status='Skip Module Navigation Links'; return true" onBlur="window.status=''; return true"  class="skiplinks">Skip Module Navigation Links</a>
+<table  CLASS="plaintable" SUMMARY="This is main table for displaying Tab Items."
+                          WIDTH="100%" cellSpacing=0 cellPadding=0 border=0>
+<tr>
+<TD CLASS="pldefault">
+<table  CLASS="plaintable" SUMMARY="This table displays Tab Items."
+                 cellSpacing=0 cellPadding=0 border=0>
+<tr>
+<td class="taboff" height=22>
+<a href="/banner/twbkwbis.P_GenMenu?name=bmenu.P_MainMnu" onMouseover="window.status='Return to Main Menu'; return true" onMouseout="window.status=''; return true" onFocus="window.status='Return to Main Menu'; return true" onBlur="window.status=''; return true" >Home</a>
+</TD>
+<TD class="bgtaboff" height=22 vAlign="top" align="right">
+<img src="/wtlgifs/web_tab_corner_right.gif" alt="Tab Corner Right" CLASS="headerImg" TITLE="Tab Corner Right"  NAME="web_tab_corner_right" HSPACE=0 VSPACE=0 BORDER=0 HEIGHT=20 WIDTH=8 />
+</TD>
+<td class="taboff" height=22>
+<a href="/banner/twbkwbis.P_GenMenu?name=bmenu.P_GenMnu" onMouseover="window.status='Personal Information'; return true" onMouseout="window.status=''; return true" onFocus="window.status='Personal Information'; return true" onBlur="window.status=''; return true" >My Information</a>
+</TD>
+<TD class="bgtaboff" height=22 vAlign="top" align="right">
+<img src="/wtlgifs/web_tab_corner_right.gif" alt="Tab Corner Right" CLASS="headerImg" TITLE="Tab Corner Right"  NAME="web_tab_corner_right" HSPACE=0 VSPACE=0 BORDER=0 HEIGHT=20 WIDTH=8 />
+</TD>
+<td class="tabon"  height=22>
+<a href="/banner/twbkwbis.P_GenMenu?name=bmenu.P_FacStuMnu">Records Access</a>
+</TD>
+<TD class="bgtabon"  height=22 vAlign="top" align="right">
+<img src="/wtlgifs/web_tab_corner_right.gif" alt="Tab Corner Right" CLASS="headerImg" TITLE="Tab Corner Right"  NAME="web_tab_corner_right" HSPACE=0 VSPACE=0 BORDER=0 HEIGHT=20 WIDTH=8 />
+</TD>
+<td class="taboff" height=22>
+<a href="/banner/twbkwbis.P_GenMenu?name=bmenu.P_FacMainMnu" onMouseover="window.status='Faculty Services'; return true" onMouseout="window.status=''; return true" onFocus="window.status='Faculty Services'; return true" onBlur="window.status=''; return true" >Faculty & Staff</a>
+</TD>
+<TD class="bgtaboff" height=22 vAlign="top" align="right">
+<img src="/wtlgifs/web_tab_corner_right.gif" alt="Tab Corner Right" CLASS="headerImg" TITLE="Tab Corner Right"  NAME="web_tab_corner_right" HSPACE=0 VSPACE=0 BORDER=0 HEIGHT=20 WIDTH=8 />
+</TD>
+<td class="taboff" height=22>
+<a href="/banner/twbkwbis.P_GenMenu?name=bu_help">Help</a>
+</TD>
+<TD class="bgtaboff" height=22 vAlign="top" align="right">
+<img src="/wtlgifs/web_tab_corner_right.gif" alt="Tab Corner Right" CLASS="headerImg" TITLE="Tab Corner Right"  NAME="web_tab_corner_right" HSPACE=0 VSPACE=0 BORDER=0 HEIGHT=20 WIDTH=8 />
+</TD>
+</tr>
+</table>
+</TD>
+</tr>
+<tr>
+<TD class="bgtabon" width="100%" colSpan=2><img src="/wtlgifs/web_transparent.gif" alt="Transparent Image" CLASS="headerImg" TITLE="Transparent Image"  NAME="web_transparent" HSPACE=0 VSPACE=0 BORDER=0 HEIGHT=3 WIDTH=10 /></TD></tr></table>
+</map>
+</SPAN>
+<a name="skip_Module_Navigation_Links_H"></a>
+</DIV>
+<table  CLASS="plaintable" SUMMARY="This table displays Menu Items and Banner Search textbox."
+         WIDTH="100%">
+<tr>
+<TD CLASS="pldefault">
+<div class="headerlinksdiv2">
+<form action="/banner/twbksrch.P_ShowResults" method="post">
+Search
+<SPAN class="fieldlabeltextinvisible"><LABEL for=keyword_in_id><SPAN class="fieldlabeltext">Search</SPAN></LABEL></SPAN>
+<input type="text" name="KEYWRD_IN" size="20" maxlength="65" ID="keyword_in_id" />
+<input type="submit" value="Go" />
+</form>
+</div>
+</TD>
+<TD CLASS="pldefault"><p class="rightaligntext"></p>
+<SPAN class="pageheaderlinks">
+<a href="/banner/twbkwbis.P_GenMenu?name=bmenu.P_FacMainMnu"  class="submenulinktext2" id="ssbbackurl">RETURN TO MENU</a>
+|
+<a href="/banner/twbksite.P_DispSiteMap?menu_name_in=bmenu.P_MainMnu&amp;depth_in=2&amp;columns_in=3" accesskey="2" class="submenulinktext2">SITE MAP</a>
+|
+<a href="/fachelp/hwghwbi2.htm" accesskey="H" onClick="popup = window.open('/fachelp/hwghwbi2.htm', 'PopupPage','height=500,width=450,scrollbars=yes,resizable=yes'); return false" target="_blank" onMouseOver="window.status='';  return true" onMouseOut="window.status=''; return true"onFocus="window.status='';  return true" onBlur="window.status=''; return true"  class="submenulinktext2">HELP</a>
+|
+<a href="twbkwbis.P_Logout" accesskey="3" class="submenulinktext2">EXIT</a>
+</span>
+</TD>
+</tr>
+</table>
+</DIV>
+<div class="pagetitlediv">
+<table  CLASS="plaintable" SUMMARY="This table displays title and static header displays."
+   WIDTH="100%">
+<tr>
+<TD CLASS="pldefault">
+<h2>Faculty & Advisor Records Access</h2>
+</TD>
+<TD CLASS="pldefault">
+&nbsp;
+</TD>
+<TD CLASS="pldefault"><p class="rightaligntext"></p>
+<div class="staticheaders">
+</div>
+</TD>
+</tr>
+<tr>
+<TD class="bg3" width="100%" colSpan=3><img src="/wtlgifs/web_transparent.gif" alt="Transparent Image" CLASS="headerImg" TITLE="Transparent Image"  NAME="web_transparent" HSPACE=0 VSPACE=0 BORDER=0 HEIGHT=3 WIDTH=10 /></TD>
+</tr>
+</table>
+<a name="main_content"></a>
+</DIV>
+<div class="pagebodydiv">
+<!--  ** END OF twbkwbis.P_OpenDoc **  -->
+<div class="infotextdiv"><table  CLASS="infotexttable" SUMMARY="This layout table contains information that may be helpful in understanding the content and functionality of this page.  It could be a brief set of instructions, a description of error messages, or other special information."><tr><td CLASS="indefault"><SPAN class="infotext"> <div id="critical"><b>Reminder</b>: Users may access records to <i>support University business only</i>, in accord with our <a href="http://its.binghamton.edu/policies/acceptable-use" target="_blank"><b>Computer and Network Usage Policy (Acceptable Use Policy)</b></a>.  All users accepted these policies when first logging in.</div>
+<br>
+<br><script>httpRequest('wwgkxmlr.P_ShowInfo?label=DEGREECA')</script>
+</b><br></font></b></SPAN></td></tr></table><p></DIV>
+<table  CLASS="menuplaintable" summary="This layout table holds the menu items">
+<tr>
+<td CLASS="mpdefault">&nbsp;</td>
+<TD CLASS="mpdefault">
+<a href="/banner/bwlkostm.P_FacSelTerm"  class="submenulinktext2 "onMouseover="window.status='Term Selection'; return true" onMouseout="window.status=''; return true" onFocus="window.status='Term Selection'; return true" onBlur="window.status=''; return true" >Term Selection</a>
+<br />
+<SPAN class="menulinkdesctext ">Set the term (semester and year) you would like to review.<br><br></SPAN>
+</TD>
+</tr>
+<tr>
+<td CLASS="mpdefault">&nbsp;</td>
+<TD CLASS="mpdefault">
+<a href="/banner/bwlkoids.P_FacIDSel"  class="submenulinktext2 "onMouseover="window.status='ID Selection'; return true" onMouseout="window.status=''; return true" onFocus="window.status='ID Selection'; return true" onBlur="window.status=''; return true" >ID Selection</a>
+<br />
+<SPAN class="menulinkdesctext ">Select a student ID to begin interacting with a record.<br><br></SPAN>
+</TD>
+</tr>
+<tr>
+<td CLASS="mpdefault">&nbsp;</td>
+<TD CLASS="mpdefault">
+<br />
+<SPAN class="menulinkdesctext "><h2>Student Academic Records</h2></SPAN>
+</TD>
+</tr>
+<tr>
+<td CLASS="mpdefault">&nbsp;</td>
+<TD CLASS="mpdefault">
+<a href="/banner/bwlkgstu.P_FacStuInfo"  class="submenulinktext2 "onMouseover="window.status='View Student Information'; return true" onMouseout="window.status=''; return true" onFocus="window.status='View Student Information'; return true" onBlur="window.status=''; return true" >Student Information</a>
+<br />
+<SPAN class="menulinkdesctext ">Access summary academic information for selected students. Includes: major, program, status, residency, standing, class.<br><br></SPAN>
+</TD>
+</tr>
+<tr>
+<td CLASS="mpdefault">&nbsp;</td>
+<TD CLASS="mpdefault">
+<a href="/banner/bwlkftrn.P_FacDispTran"  class="submenulinktext2 "onMouseover="window.status='Academic Transcript'; return true" onMouseout="window.status=''; return true" onFocus="window.status='Academic Transcript'; return true" onBlur="window.status=''; return true" >Academic Transcripts</a>
+<br />
+<SPAN class="menulinkdesctext ">Access unofficial online versions of the complete official transcript. This tool features much of the former GP20 data, including by-semester summaries and GPA calculations.<br><br></SPAN>
+</TD>
+</tr>
+<tr>
+<td CLASS="mpdefault">&nbsp;</td>
+<TD CLASS="mpdefault">
+<a href="/banner/twbkwbis.P_GenMenu?name=bmenu.P_DarsFacMnu"  class="submenulinktext2 "onMouseover="window.status='Degree Evaluation'; return true" onMouseout="window.status=''; return true" onFocus="window.status='Degree Evaluation'; return true" onBlur="window.status=''; return true" >Banner DARS</a>
+<br />
+<SPAN class="menulinkdesctext ">Order DARS audits or review existing DARS audits for selected students.<br><br></b><br></SPAN>
+</TD>
+</tr>
+<tr>
+<td CLASS="mpdefault">&nbsp;</td>
+<TD CLASS="mpdefault">
+<a href="BWCKYSWPS.py_CreateSurvey?app_in=BU_ADV_SUMMARY"  class="submenulinktext2 ">Advanced Placement & Transfer Summary (SR44)</a>
+<br />
+<SPAN class="menulinkdesctext ">View detailed transfer records and AP scores for selected students.<br><br></SPAN>
+</TD>
+</tr>
+<tr>
+<td CLASS="mpdefault">&nbsp;</td>
+<TD CLASS="mpdefault">
+<a href="/banner/bwlkfstu.P_FacStuSchd"  class="submenulinktext2 "onMouseover="window.status='View Student Schedule'; return true" onMouseout="window.status=''; return true" onFocus="window.status='View Student Schedule'; return true" onBlur="window.status=''; return true" >Student Schedule</a>
+<br />
+<SPAN class="menulinkdesctext ">Access schedules for selected students.<br><br></SPAN>
+</TD>
+</tr>
+<tr>
+<td CLASS="mpdefault">&nbsp;</td>
+<TD CLASS="mpdefault">
+<a href="/banner/bwlksreg.p_fac_active_regs"  class="submenulinktext2 "onMouseover="window.status='View Active Registrations'; return true" onMouseout="window.status=''; return true" onFocus="window.status='View Active Registrations'; return true" onBlur="window.status=''; return true" >Active Registrations (Summary Schedule)</a>
+<br />
+<SPAN class="menulinkdesctext ">View a registration summary for a selected student. <br><br></SPAN>
+</TD>
+</tr>
+<tr>
+<td CLASS="mpdefault">&nbsp;</td>
+<TD CLASS="mpdefault">
+<a href="/banner/bwlkhreg.p_fac_reg_hist"  class="submenulinktext2 "onMouseover="window.status='View Registration History'; return true" onMouseout="window.status=''; return true" onFocus="window.status='View Registration History'; return true" onBlur="window.status=''; return true" >Registration History</a>
+<br />
+<SPAN class="menulinkdesctext ">View online registration transactions for a selected student.<br><br></SPAN>
+</TD>
+</tr>
+<tr>
+<td CLASS="mpdefault">&nbsp;</td>
+<TD CLASS="mpdefault">
+<br />
+<SPAN class="menulinkdesctext "><h2>Student Biographic and Demographic Information</h2></SPAN>
+</TD>
+</tr>
+<tr>
+<td CLASS="mpdefault">&nbsp;</td>
+<TD CLASS="mpdefault">
+<a href="/banner/bwlkosad.P_FacSelectAtypView"  class="submenulinktext2 "onMouseover="window.status='View Student Address and Phones'; return true" onMouseout="window.status=''; return true" onFocus="window.status='View Student Address and Phones'; return true" onBlur="window.status=''; return true" >Student Address and Phones</a>
+<br />
+<SPAN class="menulinkdesctext ">Review address and telephone information for your students and advisees.<br><br></SPAN>
+</TD>
+</tr>
+<tr>
+<td CLASS="mpdefault">&nbsp;</td>
+<TD CLASS="mpdefault">
+<a href="/banner/bwlkosad.P_FacSelectEmalView"  class="submenulinktext2 "onMouseover="window.status='View Student E-mail Address'; return true" onMouseout="window.status=''; return true" onFocus="window.status='View Student E-mail Address'; return true" onBlur="window.status=''; return true" >Student E-mail Addresses</a>
+<br />
+<SPAN class="menulinkdesctext ">View current official email addresses for students and advisees.<br><br></SPAN>
+</TD>
+</tr>
+<tr>
+<td CLASS="mpdefault">&nbsp;</td>
+<TD CLASS="mpdefault">
+<a href="/banner/bwlkgstu.P_ViewHold"  class="submenulinktext2 ">View Student Holds</a>
+<br />
+<SPAN class="menulinkdesctext ">View holds that may restrict registration for students.<br><br></SPAN>
+</TD>
+</tr>
+<tr>
+<td CLASS="mpdefault">&nbsp;</td>
+<TD CLASS="mpdefault">
+<br />
+<SPAN class="menulinkdesctext "><h2>Course Records</h2></SPAN>
+</TD>
+</tr>
+<tr>
+<td CLASS="mpdefault">&nbsp;</td>
+<TD CLASS="mpdefault">
+<a href="bwlkocrn.P_FacEnterCRN"  class="submenulinktext2 ">View Class Rosters</a>
+<br />
+<SPAN class="menulinkdesctext ">Enter a CRN to view class lists for a selected course.<br><br></SPAN>
+</TD>
+</tr>
+<tr>
+<td CLASS="mpdefault">&nbsp;</td>
+<TD CLASS="mpdefault">
+<a href="bwskfcls.p_sel_crse_search"  class="submenulinktext2 ">Complete Schedule of Classes</a>
+<br />
+<SPAN class="menulinkdesctext ">View the grid view schedule of classes.<br><br></SPAN>
+</TD>
+</tr>
+<tr>
+<td CLASS="mpdefault">&nbsp;</td>
+<TD CLASS="mpdefault">
+<br />
+<SPAN class="menulinkdesctext "><h2>Specialized Tools</h2></SPAN>
+</TD>
+</tr>
+<tr>
+<td CLASS="mpdefault">&nbsp;</td>
+<TD CLASS="mpdefault">
+<a href="/banner/twbkwbis.P_GenMenu?name=spectools"  class="submenulinktext2 ">Specialized Faculty and Staff Tools</a>
+<br />
+<SPAN class="menulinkdesctext ">Access Binghamton University developed tools for Faculty and Staff. Most of these tools are developed for specific programs, and require access grants.<br><br></SPAN>
+</TD>
+</tr>
+</table>
+
+<!--  ** START OF twbkwbis.P_CloseDoc **  -->
+<table  CLASS="plaintable" SUMMARY="This is table displays line separator at end of the page."
+                                             WIDTH="100%" cellSpacing=0 cellPadding=0 border=0><tr><TD class="bgtabon" width="100%" colSpan=2><img src="/wtlgifs/web_transparent.gif" alt="Transparent Image" CLASS="headerImg" TITLE="Transparent Image"  NAME="web_transparent" HSPACE=0 VSPACE=0 BORDER=0 HEIGHT=3 WIDTH=10 /></TD></tr></table>
+<a href="#top" onMouseover="window.status='Skip to top of page'; return true" onMouseout="window.status=''; return true" OnFocus="window.status='Skip to top of page'; return true" onBlur="window.status=''; return true" class="skiplinks">Skip to top of page</a>
+</DIV>
+<div class="footerbeforediv">
+
+</DIV>
+<div class="footerafterdiv">
+
+</DIV>
+<div class="globalafterdiv">
+
+</DIV>
+<div class="globalfooterdiv">
+
+</DIV>
+<div class="pagefooterdiv">
+<SPAN class="releasetext">Release: 1.0</SPAN>
+</DIV>
+<div class="poweredbydiv">
+</DIV>
+<DIV class="div1"></DIV>
+<DIV class="div2"></DIV>
+<DIV class="div3"></DIV>
+<DIV class="div4"></DIV>
+<DIV class="div5"></DIV>
+<DIV class="div6"></DIV>
+<div class="banner_copyright"> <br><h5>© 2015 Ellucian Company L.P. and its affiliates.<br></h5></div>
+</body>
+</html>

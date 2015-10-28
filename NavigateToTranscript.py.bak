@@ -1,0 +1,100 @@
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+import getpass
+
+driver = webdriver.Firefox()
+driver.get("https://ssb.cc.binghamton.edu/banner/twbkwbis.P_WWWLogin")
+
+driver.implicitly_wait(10)
+
+#Begin - get credentials and login
+USERNAME = 'mimran1'
+#inFile = open("readMe.txt","rt")
+#PASSWORD = inFile.read()    #Get password from file
+PASSWORD = getpass.getpass() #Get password from user input
+id = driver.find_element_by_id("UserID")
+passwrd = driver.find_element(By.NAME,"PIN")
+id.send_keys(USERNAME)
+passwrd.send_keys(PASSWORD)
+clickLogin = driver.find_element_by_xpath("//input[@type='submit']")
+clickLogin.click()
+
+#End login in
+
+driver.implicitly_wait(10)
+
+#Begin - get to "Student" 
+studentTab = driver.find_element_by_xpath("//tr/td[5]/a")
+studentTab.click()
+#End
+
+driver.implicitly_wait(10)
+
+#Begin - click "Student Records"
+studentRecords = driver.find_element_by_xpath("//tr[2]/td[2]/a")
+studentRecords.click()
+#End
+
+driver.implicitly_wait(10)
+
+#Being - click "Online Academic Transcript"
+#onlineAcademicTranscript = driver.find_element_by_xpath("//tr[4]/td[2]/a")
+onlineAcademicTranscript = driver.find_element_by_link_text("Online Academic Transcript")
+onlineAcademicTranscript.click()
+#End
+
+driver.implicitly_wait(10)
+
+#Begin - select Graduate then Unofficial
+def transcriptPage():  
+    transcriptLevel = driver.find_element_by_xpath("//select[@id='levl_id']/option[2]")
+    transcriptLevel.click()
+    transcriptType = driver.find_element_by_xpath("//select[@id='type_id']/option[1]")
+    transcriptType.click()
+    submit = driver.find_element_by_xpath("//input[@type='submit'][@value='Submit']")
+    submit.click()
+#End
+transcriptPage()
+
+driver.implicitly_wait(10)
+
+###############  Now we are at the transcipt page ###############
+studentName = driver.find_element_by_xpath('//div[contains(text(), "B00259633 Mohammad A. Imran")]')
+Architecture = driver.find_element_by_xpath('//td[contains(text(), "520")]').text
+OS = driver.find_element_by_xpath('//td[contains(text(), "550")]').text
+Languages = driver.find_element_by_xpath('//td[contains(text(), "571")]').text
+Algorithms = driver.find_element_by_xpath('//td[contains(text(), "575")]').text
+
+#find elements within a column
+colTitle = driver.find_elements_by_xpath('//th[2]')
+print colTitle
+
+print studentName.text
+print OS
+print Languages
+print Algorithms
+
+#find all the rows (i.e. all tr tags)
+table = driver.find_element_by_class_name("datadisplaytable")
+rows = table.find_elements_by_tag_name("tr")
+print "rows found: " ,len(rows)
+
+oFile = open("writeMe.txt","w")
+for val in rows:
+    line = val.text
+    stringLine = line.encode("utf-8")
+    oFile.write(stringLine)
+    word = stringLine.split()
+    #if word[0]
+    if stringLine == "":
+        print "###########AAAAAAMMMMMMTYYYY###########"
+    print stringLine
+oFile.close()
+#find all rows named Subject
+#subject = rows.find_elements_by_tag_name("Subject")
+#print "Subjects found: ",len(subject)
+
+
+
+driver.close()
