@@ -12,13 +12,15 @@ driver = webdriver.Firefox()
 nav = NavigateToTranscript(USERNAME,PASSWORD,driver)
 parse = Parsing(driver)
 navToStuSch = NavigateToStuSchedule(driver)
-
+extractAdvName = ExtractAdvisorName(driver)
 
 nav.setSuccessor(parse)
 parse.setSuccessor(navToStuSch)
+navToStuSch.setSuccessor(extractAdvName)
 
 print("Time to add more stuff. Updated in windows")
 
 nav.processRequest("")
 driver.close()
 endTime = time.time()-startTime
+print("Execution time: ", endTime, " secs")

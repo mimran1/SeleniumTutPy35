@@ -104,7 +104,7 @@ class Parsing(Base):
     
     def processRequest(self,anyobject):
         self.parsePage()
-        self.successor.processRequest(self.finalYearOption)
+        self.successor.processRequest(self.projOrThesis)
         
     
     def parsePage(self):
@@ -117,6 +117,7 @@ class Parsing(Base):
         termDict = {}
         courseDict = {}
         self.finalYearOption = ""
+        listInfo = []
         for val in rows:
             line = val.text
             stringLine = line#.encode("utf-8")#
@@ -129,6 +130,8 @@ class Parsing(Base):
                 if wordsInline[0] == "CS" and wordsInline[1][0] == "5":
                     courseKey = wordsInline[0]+wordsInline[1]
                     if courseKey == "CS599" or courseKey == "CS595":
+                        listInfo.append(key)
+                        listInfo.append(courseKey) 
                         self.finalYearOption = courseKey
                     courseDict[courseKey] = ""
                     for i in range(2,len(wordsInline)):
@@ -148,7 +151,7 @@ class Parsing(Base):
                 print() 
                 oFile.write("\n")
         
-           
+        self.projOrThesis = {"Semester":listInfo[0], "Course":listInfo[1]} 
         oFile.close()
 
 class NavigateToStuSchedule(Base):
@@ -157,14 +160,18 @@ class NavigateToStuSchedule(Base):
         Base.__init__(self,driver)
     
     def processRequest(self, anyObject):
-        self.termToSelect = anyObject
+        self.Semester = anyObject["Semester"]
+        self.Course = anyObject["Course"]
         self.startNavigation()
-        print("Chain ends at NavigateToStuSchedule")
+        self.successor.processRequest("")
+        
     
     def startNavigation(self):
         self.clickStudent()
         self.clickRegistration()
         self.clickSelectTerm()
+        self.chooseTerm(self.Semester)
+        self.clickStudentDetailSchedule()
     
     def clickStudent(self):
         #Begin - get to "Student" 
@@ -184,3 +191,44 @@ class NavigateToStuSchedule(Base):
         selectTerm = self.driver.find_element_by_link_text("Select Term")
         selectTerm.click()
         self.driver.implicitly_wait(10)
+    
+    def chooseTerm(self,term):
+        str1 = "Spring2015"
+        save = -1
+        for i in range(len(str1)):
+            if str1[i] == '2':
+                save = i
+                break
+        length = save
+        temp = " ".join(str1[i:i+length] for i in range(0,len(str1),length))
+
+        options = self.driver.find_element_by_xpath("//*[contains(text(),'" + temp + "')]")
+        options.click()
+        submit = self.driver.find_element_by_xpath("//input[@type='submit'][@value='Submit']")
+        submit.click()
+    
+    def clickStudentDetailSchedule(self):
+        stuDetailSch = self.driver.find_element_by_link_text("Student Detail Schedule")
+        stuDetailSch.click()
+        self.driver.implicitly_wait(10)
+
+class ExtractAdvisorName(Base):
+    
+    def __init__(self,driver):
+        Base.__init__(self,driver)
+    
+    def processRequest(self, anyObject):
+        self.extractAdvisior()
+        
+    def extractAdvisior(self):
+        table = self.driver.find_element_by_xpath("//*[contains(text(),'Termination Project')]/following-sibling::*")
+        terminationProject = table.text
+        terminationProjectList = terminationProject.split("\n")
+        assignedInstructor = ""
+        for line in terminationProjectList:
+            if line.startswith("Assigned"):
+                assignedInstructor = line.split(": ") #assumes that there is a space after the :. If no space then split(": ") should be replaced by split(":")
+                break
+    
+        print(assignedInstructor[-1])
+        print("Chain ends at ExtractAdvisorName")
